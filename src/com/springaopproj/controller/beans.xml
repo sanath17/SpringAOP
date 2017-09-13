@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Below code is normal spring ioc -->
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="customerService" class="com.springaopproj.controller.CustomerService">
+		<property name="name" value="Test Erer" />
+		<property name="url" value="http://www.test.com" />
+	</bean>
+
+</beans> -->
+
+<!-- Below code is used for Before method advice -->
+
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="customerService" class="com.springaopproj.controller.CustomerService">
+		<property name="name" value="Greg Rob" />
+		<property name="url" value="http://www.gmail.com" />
+	</bean>
+
+	<bean id="hijackBeforeMethodBean" class="com.springaopproj.controller.HijackBeforeMethod" />
+
+	<bean id="customerServiceProxy"
+                 class="org.springframework.aop.framework.ProxyFactoryBean">
+
+		<property name="target" ref="customerService" />
+
+		<property name="interceptorNames">
+			<list>
+				<value>hijackBeforeMethodBean</value>
+			</list>
+		</property>
+	</bean>
+</beans> -->
+
+<!-- Below code is used for After method advice -->
+
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="customerService" class="com.springaopproj.controller.CustomerService">
+		<property name="name" value="Robert Evetts" />
+		<property name="url" value="http://www.gmail.com" />
+	</bean>
+
+	<bean id="hijackAfterMethodBean" class="com.springaopproj.controller.HijackAfterMethod" />
+
+	<bean id="customerServiceProxy"
+                class="org.springframework.aop.framework.ProxyFactoryBean">
+
+		<property name="target" ref="customerService" />
+
+		<property name="interceptorNames">
+			<list>
+				<value>hijackAfterMethodBean</value>
+			</list>
+		</property>
+	</bean>
+</beans> -->
+
+<!-- Below code is used for After Throwing exception -->
+<!-- 
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="customerService" class="com.springaopproj.controller.CustomerService">
+		<property name="name" value="Greg Meme" />
+		<property name="url" value="http://www.test.com" />
+	</bean>
+
+	<bean id="hijackThrowExceptionBean" class="com.springaopproj.controller.HijackThrowException" />
+
+	<bean id="customerServiceProxy"
+                 class="org.springframework.aop.framework.ProxyFactoryBean">
+
+		<property name="target" ref="customerService" />
+
+		<property name="interceptorNames">
+			<list>
+				<value>hijackThrowExceptionBean</value>
+			</list>
+		</property>
+	</bean>
+</beans>
+ -->
+ 
+ <!-- Below code is used for Around advice -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="customerService" class="com.springaopproj.controller.CustomerService">
+		<property name="name" value="Robert Tete" />
+		<property name="url" value="http://www.facebook.com" />
+	</bean>
+
+	<bean id="hijackAroundMethodBean" class="com.springaopproj.controller.HijackAroundMethod" />
+
+	<bean id="customerServiceProxy"
+                class="org.springframework.aop.framework.ProxyFactoryBean">
+
+		<property name="target" ref="customerService" />
+
+		<property name="interceptorNames">
+			<list>
+				<value>hijackAroundMethodBean</value>
+			</list>
+		</property>
+	</bean>
+</beans>
+
